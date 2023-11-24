@@ -17,17 +17,17 @@
 
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
 
   <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet" />
 
 </head>
 
@@ -93,32 +93,14 @@
         </p>
       </div>
       
-      <video id="cameraFeed" width="1080" height="480" autoplay></video>
+      <img class="text-center" src="{{ url_for('video_feed') }}" style="width:720px;">
 
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Mendapatkan elemen video
-            var video = document.getElementById("cameraFeed");
+      <div class="text-center">
+        <p>Culang kanan : 8 </p>
+        <p>Culang kiri : 8 </p>
+        <p>Culang Cileung : 8 </p>
+      </div>
     
-            // Mengonfigurasi dan mendapatkan izin untuk menggunakan kamera
-            navigator.mediaDevices.getUserMedia({ video: true })
-                .then(function (stream) {
-                    // Menyeting sumber video dari kamera
-                    video.srcObject = stream;
-                })
-                .catch(function (error) {
-                    console.error("Error accessing camera: ", error);
-                });
-        });
-    </script>
-
-    <div class="text-center">
-      <p>Culang kanan : 8 </p>
-      <p>Culang kiri : 8 </p>
-      <p>Culang Cileung : 8 </p>
-    </div>
-    
-
     </div>
   </section>
 
@@ -138,11 +120,11 @@
 
 
   <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
   <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
   <!-- custom js -->
-  <script src="js/custom.js"></script>
+  <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- End Google Map -->

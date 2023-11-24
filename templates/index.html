@@ -8,7 +8,7 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <link rel="icon" href="{{ url_for('static', filename='images/fevicon.png') }}" type="image/gif" />
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
@@ -17,17 +17,17 @@
 
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
 
   <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet" />
 
 </head>
 
@@ -56,7 +56,7 @@
                 <a class="nav-link" href="about.html"> About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="furniture.html">Demo</a>
+                <a class="nav-link" href="{{ url_for("demo") }}">Demo</a>
               </li>
             </ul>
           </div>
@@ -104,7 +104,7 @@
                 </div>
                 <div class="col-md-7">
                   <div class="img-box">
-                    <img src="images/slider-img.png" alt="">
+                    <img src="{{ url_for('static', filename='images/slider-img.png') }}" alt="">
                   </div>
                 </div>
               </div>
@@ -134,7 +134,7 @@
                 </div>
                 <div class="col-md-7">
                   <div class="img-box">
-                    <img src="images/slider-img.png" alt="">
+                    <img src="{{ url_for('static', filename='images/slider-img.png') }}" alt="">
                   </div>
                 </div>
               </div>
@@ -164,7 +164,7 @@
                 </div>
                 <div class="col-md-7">
                   <div class="img-box">
-                    <img src="images/slider-img.png" alt="">
+                    <img src="{{ url_for('static', filename='images/slider-img.png') }}" alt="">
                   </div>
                 </div>
               </div>
@@ -681,11 +681,11 @@
 
 
   <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
   <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
   <!-- custom js -->
-  <script src="js/custom.js"></script>
+  <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- End Google Map -->
