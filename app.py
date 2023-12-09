@@ -143,7 +143,15 @@ def result():
     result_folder = 'static/images/result'
     image_paths = os.listdir(result_folder)
     len_paths = len(image_paths)
-    return render_template("result.html", image_paths = image_paths, len_paths=len_paths)
+    right = []
+    left = []
+    for i in range(len_paths):
+        split = image_paths[i].split('_')
+        if split[1] == "Lihat Kanan":
+            right.append(split[1])
+        else:
+            left.append(split[1])
+    return render_template("result.html", image_paths = image_paths, len_paths=len_paths, len_right = len(right), len_left = len(left))
 
 @app.route("/video_feed")
 def video_feed():
