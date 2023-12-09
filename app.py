@@ -80,7 +80,7 @@ def deteksi_pose():
 
                     time.sleep(0.5)
                     capture, image = cap.read()
-                    file_name = f"{index}_Lihat Kanan_{datetime.now().strftime('%H:%M:%S')}.png"
+                    file_name = f"static/images/result/{index}_Lihat Kanan_{datetime.now().strftime('%H.%M.%S')}.png"
                     cv2.imwrite(file_name, image)
                     index+=1
                     
@@ -93,7 +93,7 @@ def deteksi_pose():
                     
                     time.sleep(0.5)
                     capture, image = cap.read()
-                    file_name = f"{index}_Lihat Kiri_{datetime.now().strftime('%H:%M:%S')}.png"
+                    file_name = f"static/images/result/{index}_Lihat Kiri_{datetime.now().strftime('%H.%M.%S')}.png"
                     cv2.imwrite(file_name, image)
                     index+=1
 
