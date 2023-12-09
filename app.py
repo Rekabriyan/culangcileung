@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, Response
 import cv2
+import os
 import mediapipe as mp
 import numpy as np
 mp_drawing = mp.solutions.drawing_utils
@@ -11,7 +12,7 @@ import time
 app = Flask(__name__)
 app.config['STATIC_FOLDER'] = 'static'
 
-def calculate_angle(a,b,c):
+def calculate_angle(a, b, c):
     a = np.array(a) # First
     b = np.array(b) # Mid
     c = np.array(c) # End
@@ -136,6 +137,13 @@ def about():
 @app.route("/demo")
 def demo():
     return render_template("demo.html")
+
+@app.route("/result")
+def result():
+    result_folder = 'static/images/result'
+    image_paths = os.listdir(result_folder)
+    len_paths = len(image_paths)
+    return render_template("result.html", image_paths = image_paths, len_paths=len_paths)
 
 @app.route("/video_feed")
 def video_feed():
