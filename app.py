@@ -34,7 +34,6 @@ def deteksi_pose():
     stage_kanan = None
     stage_kiri = None
 
-    hasil_deteksi = []
     index = 0
 
     with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
@@ -80,12 +79,8 @@ def deteksi_pose():
 
                     time.sleep(0.5)
                     capture, image = cap.read()
-                    cv2.imwrite(str(index) + ".png", image)
-                    data = {
-                        'keterangan': "Lihat Kanan",
-                        'waktu': datetime.now().strftime("%H:%M:%S")
-                    }
-                    hasil_deteksi.append(data)
+                    file_name = f"{index}_Lihat Kanan_{datetime.now().strftime('%H:%M:%S')}.png"
+                    cv2.imwrite(file_name, image)
                     index+=1
                     
                 if angle_kiri > 120:
@@ -97,12 +92,8 @@ def deteksi_pose():
                     
                     time.sleep(0.5)
                     capture, image = cap.read()
-                    cv2.imwrite(str(index) + ".png", image)
-                    data = {
-                        'keterangan': "Lihat Kiri",
-                        'waktu': datetime.now().strftime("%H:%M:%S")
-                    }
-                    hasil_deteksi.append(data)
+                    file_name = f"{index}_Lihat Kiri_{datetime.now().strftime('%H:%M:%S')}.png"
+                    cv2.imwrite(file_name, image)
                     index+=1
 
             except:
