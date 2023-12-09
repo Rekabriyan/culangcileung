@@ -17,17 +17,17 @@
 
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
 
   <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet" />
 
 </head>
 
@@ -39,7 +39,7 @@
       <nav class="navbar navbar-expand-lg custom_nav-container ">
         <a class="navbar-brand" href="index.html">
           <span>
-            CANGCUT
+            A4 NIH
           </span>
         </a>
         </a>
@@ -54,10 +54,10 @@
                 <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="about.html"> About</a>
+                <a class="nav-link" href="{{ url_for("about") }}"> About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="demo.html">Demo</a>
+                <a class="nav-link" href="{{ url_for("demo") }}">Demo</a>
               </li>
             </ul>
           </div>
@@ -93,54 +93,51 @@
         <div class="col-md-6 col-lg-4 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/b1.jpg" alt="">
+              <img src="https://akademik.polban.ac.id/fotomhsrekap/211524009.jpg" width="300" height="450">
             </div>
             <div class="detail-box">
-              <h5>
-                Look even slightly believable. If you are
+              <h5 class="text-center">
+                Fardan Al Jihad
               </h5>
-              <p>
-                alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+              <p class="text-center">
+                211524009
+                <br>
+                D4 - 3A Teknik Informatika
               </p>
-              <a href="">
-                Read More
-              </a>
             </div>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/b2.jpg" alt="">
+              <img src="https://akademik.polban.ac.id/fotomhsrekap/211524015.jpg" width="300" height="450">
             </div>
             <div class="detail-box">
-              <h5>
-                Anything embarrassing hidden in the middle
+              <h5 class="text-center">
+                Mochammad Fathul'ibad
               </h5>
-              <p>
-                alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+              <p class="text-center">
+                211524015
+                <br>
+                D4 - 3A Teknik Informatika
               </p>
-              <a href="">
-                Read More
-              </a>
             </div>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/b3.jpg" alt="">
+              <img src="https://akademik.polban.ac.id/fotomhsrekap/211524024.jpg" width="300" height="450">
             </div>
             <div class="detail-box">
-              <h5>
-                Molestias magni natus dolores odio commodi. Quaerat!
+              <h5 class="text-center">
+                Reka Briyan Cahya Heryana
               </h5>
-              <p>
-                alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+              <p class="text-center">
+                211524024
+                <br>
+                D4 - 3A Teknik Informatika
               </p>
-              <a href="">
-                Read More
-              </a>
             </div>
           </div>
         </div>
