@@ -4,6 +4,8 @@ import mediapipe as mp
 import numpy as np
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
+from datetime import datetime
+import time
 
 
 app = Flask(__name__)
@@ -31,6 +33,9 @@ def deteksi_pose():
     counter_kiri = 0
     stage_kanan = None
     stage_kiri = None
+
+    hasil_deteksi = []
+    index = 0
 
     with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
         while True:
@@ -68,15 +73,37 @@ def deteksi_pose():
                 
                 if angle_kanan > 120:
                     stage_kanan = "diem"
+
                 if angle_kanan < 70 and stage_kanan =='diem':
                     stage_kanan="kanan"
                     counter_kanan +=1
-                
+
+                    time.sleep(0.5)
+                    capture, image = cap.read()
+                    cv2.imwrite(str(index) + ".png", image)
+                    data = {
+                        'keterangan': "Lihat Kanan",
+                        'waktu': datetime.now().strftime("%H:%M:%S")
+                    }
+                    hasil_deteksi.append(data)
+                    index+=1
+                    
                 if angle_kiri > 120:
                     stage_kiri = "diem"
+
                 if angle_kiri < 70 and stage_kiri =='diem':
                     stage_kiri="kiri"
                     counter_kiri +=1
+                    
+                    time.sleep(0.5)
+                    capture, image = cap.read()
+                    cv2.imwrite(str(index) + ".png", image)
+                    data = {
+                        'keterangan': "Lihat Kiri",
+                        'waktu': datetime.now().strftime("%H:%M:%S")
+                    }
+                    hasil_deteksi.append(data)
+                    index+=1
 
             except:
                 pass
